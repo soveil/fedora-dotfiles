@@ -7,7 +7,7 @@ if not vim.g.vscode then
 		},
 		opts = {},
 		init = function()
-			vim.keymap.set("n", "<leader>fd", function()
+			vim.keymap.set("n", "<leader>ft", function()
 				vim.cmd("TodoTelescope")
 			end, { desc = "Find todo" })
 		end,

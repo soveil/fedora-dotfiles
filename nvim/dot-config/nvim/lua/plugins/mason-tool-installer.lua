@@ -13,6 +13,7 @@ return {
 			"rust-analyzer",
 			"stylua",
 			"typos-lsp",
+			"arduino-language-server",
 		},
 		auto_update = true,
 	},

@@ -36,6 +36,19 @@ return {
 			})
 		end)
 
+		vim.keymap.set("n", "<leader>fd", function()
+			builtin.lsp_dynamic_workspace_symbols({
+				symbols = { "function", "method" },
+				prompt_title = "Find Functions",
+			})
+		end, { desc = "Find functions" })
+
+		vim.keymap.set("n", "<leader>fs", function()
+			builtin.lsp_dynamic_workspace_symbols({
+				prompt_title = "Find Symbols",
+			})
+		end, { desc = "Find symbols" })
+
 		-- Godot specific overwrites
 		if not Godot then
 			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })

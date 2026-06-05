@@ -5,6 +5,11 @@ vim.keymap.set("n", "<leader>w", "<cmd>set wrap!<CR>", { desc = "Toggle wrap" })
 vim.keymap.set("n", "<leader>o", "o<Esc>")
 vim.keymap.set("n", "<leader>L", "<cmd>Lazy update<CR>")
 
+vim.keymap.set({"n", "v", "s", "o"}, "<Left>", "h")
+vim.keymap.set({"n", "v", "s", "o"}, "<Down>", "j")
+vim.keymap.set({"n", "v", "s", "o"}, "<Up>", "k")
+vim.keymap.set({"n", "v", "s", "o"}, "<Right>", "l")
+
 -- Buffer navigation
 -- vim.keymap.set("n", "<C-a>", "<cmd>bp<CR>", { desc = "Previous buffer" })
 -- vim.keymap.set("n", "<C-s>", "<cmd>bn<CR>", { desc = "Next buffer" })
@@ -14,6 +19,7 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Focus left window" })
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Focus right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Focus lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Focus upper window" })
+vim.keymap.set("n", "gw", "<C-w>w", {desc = "Switch windows"})
 
 -- LSP
 vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Go to declaration" })

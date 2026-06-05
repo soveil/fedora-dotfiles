@@ -92,7 +92,7 @@ set $screenshot /home/jhor/dotfiles/sway/dot-config/sway/screenshot.sh
     bindsym $mod+Shift+up move up
     bindsym $mod+Shift+right move right
 
-    bindsym $mod+m move workspace output up
+    bindsym $mod+m move workspace output left
     bindsym $mod+Comma move container output up
 
 # Workspaces

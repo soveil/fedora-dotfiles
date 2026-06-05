@@ -18,70 +18,72 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include QMK_KEYBOARD_H
 
+// Left hand Beakl home row
+#define LSFT_A LSFT_T(KC_A)
+#define LCTL_E LCTL_T(KC_E)
+#define LALT_I LALT_T(KC_I)
+#define LGUI_H LGUI_T(KC_H)
+
+// Right hand Beakl home row
+#define ISFT_T RSFT_T(KC_T)
+#define RCTL_R RCTL_T(KC_R)
+#define RALT_N RALT_T(KC_N)
+#define RGUI_W RGUI_T(KC_W)
+
 // Thumb Layers
+#define FUNC_TAB LT(FUNCTION, KC_TAB)
 #define NAV_ENT LT(NAV, KC_ENT)
+#define NUM_ESC LT(NUMBER, KC_ESC)
+#define SYM_S LT(SYMBOL, KC_S)
+#define SYM_TAB LT(SYMBOL, KC_TAB)
+#define MOUS_ENT LT(MOUSE, KC_ENT)
 
-// Home Row Mods
-#define CTL_F LCTL_T(KC_F)
-#define GUI_D LGUI_T(KC_D)
-#define ALT_S LALT_T(KC_S)
+// Left hand Symbol home row
+#define LSFT_LC LSFT_T(KC_LCBR)
+#define LCTL_QT LCTL_T(KC_QUOT)
+#define LALT_MN LALT_T(KC_MINS)
+#define LGUI_LT LGUI_T(KC_LT)
 
-#define CTL_M    RCTL_T(KC_M)
-#define GUI_COMM RGUI_T(KC_COMM)
-#define ALT_DOT  LALT_T(KC_DOT)
+// Right hand Symbol home row
+#define RSFT_CL RSFT_T(KC_COLN)
+#define RCTL_DQ RCTL_T(KC_DQUO)
+#define RALT_PL RALT_T(KC_PLUS)
+#define RGUI_GT RGUI_T(KC_GT)
 
-#define CTL_EQL LCTL_T(KC_EQL)
-#define GUI_PLS LGUI_T(KC_PPLS)
-#define ALT_MNS LALT_T(KC_PMNS)
+// Left hand Number home row
+#define LSFT_3 LSFT_T(KC_3)
+#define LCTL_2 LCTL_T(KC_2)
+#define LALT_1 LALT_T(KC_1)
+#define LGUI_7 LGUI_T(KC_7)
 
-#define CTL_7 RCTL_T(KC_7)
-#define GUI_8 RGUI_T(KC_8)
-#define ALT_9 LALT_T(KC_9)
-
-
-// Key Overrides
-const key_override_t paren_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_LPRN, KC_RPRN);
-const key_override_t curly_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_LCBR, KC_RCBR);
-const key_override_t bracket_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_LBRC, KC_RBRC);
-
-// This globally defines all key overrides to be used
-const key_override_t *key_overrides[] = {
-	&paren_key_override,
-    &curly_key_override,
-    &bracket_key_override
-};
-
-
-// Chord Handedness
-const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
-    LAYOUT(
-        'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R', 
-        'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R', 
-        'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R', 
-                       'L', 'L', 'L',  'R', 'R', 'R'
-    );
-
+// Right hand Number home row
+#define RSFT_4 RSFT_T(KC_4)
+#define RCTL_5 RCTL_T(KC_5)
+#define RALT_6 RALT_T(KC_6)
+#define RGUI_9 RGUI_T(KC_9)
 
 enum layers_names { BASE, SYM, FUNC, NAV, MOUSE };
+
+const key_override_t *key_overrides[] = {};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE] = LAYOUT_split_3x6_3(
            KC_ESC,     KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,/*|*/      KC_Y,     KC_U,     KC_I,     KC_O,     KC_P, OSL(FUNC),
         /* - - - | - - - - | - - - - | - - - - | - - - - | - - - - -  |  - - - - - | - - - - | - - - - | - - - - | - - - - | - - - */
-           KC_TAB,     KC_A,    ALT_S,    GUI_D,    CTL_F,     KC_G,/*|*/      KC_H,     KC_J,     KC_K,     KC_L,  KC_SCLN, KC_QUOT,
+           KC_TAB,     KC_A,     KC_S,     KC_D,     KC_F,     KC_G,/*|*/      KC_H,     KC_J,     KC_K,     KC_L,  KC_SCLN, KC_QUOT,
         /* - - - | - - - - | - - - - | - - - - | - - - - | - - - - -  |  - - - - - | - - - - | - - - - | - - - - | - - - - | - - - */
-          _______,     KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,/*|*/      KC_N,    CTL_M, GUI_COMM,  ALT_DOT,  KC_SLSH, _______,
+          KC_LCTL,     KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,/*|*/      KC_N,     KC_M,  KC_COMM,   KC_DOT,  KC_SLSH, KC_LALT,
         /* - - - | - - - - | - - - - | - - - - | - - - - | - - - - -  |  - - - - - | - - - - | - - - - | - - - - | - - - - | - - - */
-                                        MO(NAV),   KC_SPC,  MO(SYM),/*|*/   KC_BSPC,  KC_LSFT,   KC_ENT
+                                        KC_LSFT,   KC_SPC,  NAV_ENT,/*|*/   KC_BSPC,  MO(SYM),  KC_RSFT
     ),
     [SYM] = LAYOUT_split_3x6_3(
-          _______,   KC_GRV,  KC_LBRC,  KC_LCBR,  KC_LPRN, KC_BSLS, /*|*/   KC_EXLM,  KC_1,  KC_2,  KC_3,   KC_NUM, _______,
+          _______,     KC_1,     KC_2,     KC_3,     KC_4,    KC_5, /*|*/      KC_6,    KC_7,     KC_8,     KC_9,     KC_0, _______,
         /* - - - | - - - - | - - - - | - - - - | - - - - | - - - - -  |  - - - - - | - - - - | - - - - | - - - - | - - - - | - - - */
-          _______,  KC_PAST,  ALT_MNS,  GUI_PLS,  CTL_EQL, KC_AMPR, /*|*/   KC_PIPE,  KC_4,  KC_5,  KC_6,  KC_UNDS, _______,
+          _______,  KC_PAST,  KC_PMNS,  KC_PPLS,   KC_EQL, KC_AMPR, /*|*/   KC_EXLM,  KC_LPRN,  KC_LCBR,  KC_LBRC,  KC_UNDS, _______,
         /* - - - | - - - - | - - - - | - - - - | - - - - | - - - - -  |  - - - - - | - - - - | - - - - | - - - - | - - - - | - - - */
-          _______,    KC_AT,  KC_TILD,  KC_CIRC,   KC_DLR, KC_HASH, /*|*/   KC_PERC,    CTL_7,    GUI_8,    ALT_9,  _______, _______,
+          _______,  KC_HASH,  KC_PIPE,  KC_PERC,  KC_BSLS,   KC_AT, /*|*/   _______,   KC_DLR,  KC_CIRC,  KC_TILD,   KC_GRV, _______,
         /* - - - | - - - - | - - - - | - - - - | - - - - | - - - - -  |  - - - - - | - - - - | - - - - | - - - - | - - - - | - - - */
-                                         _______, _______, _______, /*|*/   _______,  _______,  KC_0
+                                         _______, _______, _______, /*|*/ _______, _______, _______
     ),
     [FUNC] = LAYOUT_split_3x6_3(
           _______,    KC_F1,    KC_F2,    KC_F3,    KC_F4,   KC_F5, /*|*/     KC_F6,    KC_F7,    KC_F8,    KC_F9,   KC_F10, _______,

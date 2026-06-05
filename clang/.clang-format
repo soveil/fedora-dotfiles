@@ -1,4 +1,5 @@
 BasedOnStyle: google
+IndentWidth: 4
 AlignTrailingComments:
   Kind: Always
   OverEmptyLines: 1
@@ -29,5 +30,5 @@ KeepEmptyLines:
   AtStartOfFile: false
 AllowShortFunctionsOnASingleLine: InlineOnly
 ReflowComments: IndentOnly
-SeparateDefinitionBlocks: Always
+SeparateDefinitionBlocks: Leave
 EmptyLineBeforeAccessModifier: Always

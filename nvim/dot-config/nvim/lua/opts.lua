@@ -13,7 +13,7 @@ vim.opt.smartcase = true
 vim.opt.inccommand = "split"
 
 -- Indent
-vim.opt.tabstop = 2
+vim.opt.tabstop = 4
 vim.opt.shiftwidth = 0   -- uses tabstop
 vim.opt.softtabstop = -1 -- uses shiftwidth
 vim.opt.smarttab = true
@@ -21,8 +21,8 @@ vim.opt.autoindent = true
 vim.opt.expandtab = true
 
 -- Visual
-vim.opt.showmode = false
 vim.opt.termguicolors = true
+vim.opt.showmode = false
 vim.opt.list = true
 -- vim.opt.cmdheight = vim.g.vscode and 1 or 0
 vim.opt.colorcolumn = { 80 }

@@ -1,0 +1,5 @@
+[options]
+background = 404040
+width = 800
+height = 450
+upscaling_method = nearest_neighbour

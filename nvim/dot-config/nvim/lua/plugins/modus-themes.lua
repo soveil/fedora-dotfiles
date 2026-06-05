@@ -4,14 +4,17 @@ return {
 	cond = not vim.g.vscode,
 	priority = 1000,
 	opts = { line_nr_column_background = false },
+
 	init = function()
-		vim.cmd([[colorscheme modus]])
+		vim.cmd("colorscheme modus")
 		vim.api.nvim_set_hl(0, "Visual", { bg = "#1C3B59" })
 		vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
 
 		vim.api.nvim_set_hl(0, "Title", { link = "NormalFloat" })
 		vim.api.nvim_set_hl(0, "FloatBorder", { link = "NormalFloat" })
 		vim.api.nvim_set_hl(0, "FloatTitle", { link = "NormalFloat" })
+
+		vim.api.nvim_set_hl(0, "Operator", { fg = "#89dcec" })
 
 		vim.api.nvim_set_hl(0, "EndOfBuffer", { fg = "#000000" })
 		vim.api.nvim_set_hl(0, "FoldClosed", { fg = "#d0bc00" })
@@ -22,7 +25,7 @@ return {
 			bg = vim.api.nvim_get_hl(0, { name = "Normal" }).bg,
 		})
 		vim.api.nvim_set_hl(0, "CursorLineNr", {
-			bold=true,
+			bold = true,
 			fg = vim.api.nvim_get_hl(0, { name = "LineNr" }).fg,
 			bg = vim.api.nvim_get_hl(0, { name = "Normal" }).bg,
 		})
