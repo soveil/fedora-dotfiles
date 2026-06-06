@@ -3,23 +3,6 @@ vim.lsp.config["clangd"] = {
 	filetypes = { "c", "cpp" },
 }
 
-vim.lsp.config["lua_ls"] = {
-	cmd = { vim.fn.stdpath("data") .. "/mason/bin/lua-language-server" },
-	filetypes = { "lua" },
-	settings = {
-		Lua = {
-			runtime = {
-				version = _VERSION,
-			},
-			workspace = {
-				library = {
-					vim.env.VIMRUNTIME,
-				},
-			},
-		},
-	},
-}
-
 vim.lsp.config["ruff"] = {
 	cmd = { "ruff", "server" },
 	filetypes = { "python" },

@@ -144,3 +144,10 @@ if [ -f /home/jhor/hercules/herc4x/hyperion-init-zsh.sh ]; then
 . /home/jhor/hercules/herc4x/hyperion-init-zsh.sh
 fi
 
+
+# bun completions
+[ -s "/home/jhor/.bun/_bun" ] && source "/home/jhor/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
