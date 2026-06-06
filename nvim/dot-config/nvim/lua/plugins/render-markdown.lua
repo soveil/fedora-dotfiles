@@ -10,8 +10,13 @@ if not vim.g.vscode then
 				buftype = {
 					nofile = {
 						render_modes = true,
+						padding = { highlight = "NormalFloat" },
 						sign = { enabled = false },
 						anti_conceal = { enabled = false },
+						code = {
+							language = false,
+							{ left_pad = 0, right_pad = 0 },
+						},
 					},
 				},
 			},
