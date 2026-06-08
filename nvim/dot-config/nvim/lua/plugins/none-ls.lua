@@ -9,7 +9,7 @@ if not vim.g.vscode then
 			local sources = {
 				null_ls.builtins.formatting.clang_format, -- c, cpp, cs, java, cuda, proto
 				null_ls.builtins.formatting.stylua,   -- lua
-				null_ls.builtins.formatting.prettier, -- json
+				null_ls.builtins.formatting.prettierd, -- json
 			}
 
 			null_ls.setup({

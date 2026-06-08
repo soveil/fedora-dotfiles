@@ -16,15 +16,41 @@ return {
 			highlight.FoldClosed = { fg = "#d0bc00" }
 			highlight.Folded = { link = "Normal" }
 			highlight.QuickFixLine = { link = "Visual" }
-			highlight.FoldColumn = {
-				fg = vim.api.nvim_get_hl(0, { name = "LineNrAbove" }).fg,
-				bg = vim.api.nvim_get_hl(0, { name = "Normal" }).bg,
-			}
-			highlight.CursorLineNr = {
-				bold = true,
-				fg = vim.api.nvim_get_hl(0, { name = "LineNr" }).fg,
-				bg = vim.api.nvim_get_hl(0, { name = "Normal" }).bg,
-			}
+			highlight.PmenuSel = { link = "Visual" }
+			highlight.CursorLine = { bg = "#101010" }
+			highlight.FoldColumn = { fg = "#989898", bg = "#000000" }
+			highlight.CursorLineNr = { bold = true, fg = "#ffffff", bg = "#000000" }
+			highlight.TelescopeSelection = { link = "Visual" }
+			highlight.RenderMarkdownCode = { bg = "#000000" }
+
+			highlight.BlinkCmpKindText = { link = "CmpItemKindText" }
+			highlight.BlinkCmpKindMethod = { link = "CmpItemKindMethod" }
+			highlight.BlinkCmpKindFunction = { link = "CmpItemKindFunction" }
+			highlight.BlinkCmpKindConstructor = { link = "CmpItemKindConstructor" }
+			highlight.BlinkCmpKindField = { link = "CmpItemKindField" }
+			highlight.BlinkCmpKindVariable = { link = "CmpItemKindVariable" }
+			highlight.BlinkCmpKindClass = { link = "CmpItemKindClass" }
+			highlight.BlinkCmpKindInterface = { link = "CmpItemKindInterface" }
+			highlight.BlinkCmpKindModule = { link = "CmpItemKindModule" }
+			highlight.BlinkCmpKindProperty = { link = "CmpItemKindProperty" }
+			highlight.BlinkCmpKindUnit = { link = "CmpItemKindUnit" }
+			highlight.BlinkCmpKindValue = { link = "CmpItemKindValue" }
+			highlight.BlinkCmpKindEnum = { link = "CmpItemKindEnum" }
+			highlight.BlinkCmpKindKeyword = { link = "CmpItemKindKeyword" }
+			highlight.BlinkCmpKindSnippet = { link = "CmpItemKindSnippet" }
+			highlight.BlinkCmpKindColor = { link = "CmpItemKindColor" }
+			highlight.BlinkCmpKindFile = { link = "CmpItemKindFile" }
+			highlight.BlinkCmpKindReference = { link = "CmpItemKindReference" }
+			highlight.BlinkCmpKindFolder = { link = "CmpItemKindFolder" }
+			highlight.BlinkCmpKindEnumMember = { link = "CmpItemKindEnumMember" }
+			highlight.BlinkCmpKindConstant = { link = "CmpItemKindConstant" }
+			highlight.BlinkCmpKindStruct = { link = "CmpItemKindStruct" }
+			highlight.BlinkCmpKindEvent = { link = "CmpItemKindEvent" }
+			highlight.BlinkCmpKindOperator = { link = "CmpItemKindOperator" }
+			highlight.BlinkCmpKindTypeParameter = { link = "CmpItemKindTypeParameter" }
 		end,
 	},
+	init = function()
+		-- vim.cmd("colorscheme modus")
+	end,
 }

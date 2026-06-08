@@ -4,18 +4,13 @@ return {
 	build = ":TSUpdate",
 	cond = not vim.g.vscode,
 	init = function()
-		-- vim.treesitter.language.register("jsx", { "javascriptreact" })
 		vim.api.nvim_create_autocmd("FileType", {
 			pattern = { "<filetype>" },
 			callback = function()
 				vim.treesitter.start()
 			end,
 		})
-		require("nvim-treesitter").setup({
-			highlight = {
-				enable = true,
-			},
-		})
+		require("nvim-treesitter").setup({})
 		require("nvim-treesitter").install({
 			"bash",
 			"c",
@@ -40,7 +35,6 @@ return {
 			"markdown",
 			"markdown_inline",
 			"nix",
-			"jsx",
 			"python",
 			"regex",
 			"rust",

@@ -14,7 +14,7 @@ vim.opt.inccommand = "split"
 
 -- Indent
 vim.opt.tabstop = 4
-vim.opt.shiftwidth = 0   -- uses tabstop
+vim.opt.shiftwidth = 0 -- uses tabstop
 vim.opt.softtabstop = -1 -- uses shiftwidth
 vim.opt.smarttab = true
 vim.opt.autoindent = true
@@ -31,6 +31,8 @@ vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 20
 vim.opt.listchars = { tab = "  ", trail = "·", nbsp = "_" }
 vim.opt.numberwidth = 1
+vim.opt.winborder = "rounded"
+vim.opt.cursorline = true
 
 -- Folding
 vim.opt.foldmethod = "expr"
@@ -47,13 +49,13 @@ vim.opt.fillchars = {
 function _G.foldtext()
 	local num_lines = vim.v.foldend - vim.v.foldstart + 1
 	return vim.fn.getline(vim.v.foldstart)
-			.. " ── "
-			.. num_lines
-			.. " Lines ("
-			.. vim.v.foldstart
-			.. " - "
-			.. vim.v.foldend
-			.. ")"
+		.. " ── "
+		.. num_lines
+		.. " Lines ("
+		.. vim.v.foldstart
+		.. " - "
+		.. vim.v.foldend
+		.. ")"
 end
 
 -- vim.opt.foldtext = "v:lua.foldtext()"

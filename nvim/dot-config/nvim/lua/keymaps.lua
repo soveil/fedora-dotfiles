@@ -28,6 +28,11 @@ vim.keymap.set("n", "grf", "<cmd> lua vim.lsp.buf.format({ async = false })<CR>"
 vim.keymap.set("n", "<C-s>", function()
 	vim.lsp.buf.signature_help()
 end)
+vim.keymap.set("n", "K", function()
+	vim.lsp.buf.hover({
+		border = "rounded"
+	})
+end)
 
 -- Find and replace
 vim.keymap.set({ "n", "v" }, "<leader>s", function()
@@ -37,6 +42,7 @@ end, { desc = "Find and replace" })
 
 -- Clipboard management
 vim.keymap.set({ "n", "v" }, "d", '"1d', {})
+vim.keymap.set({ "n", "v" }, "D", '"1D', {})
 vim.keymap.set({ "n", "v" }, "x", '"1x', {})
 vim.keymap.set({ "n", "v" }, "c", '"1c', {})
 vim.keymap.set({ "n", "v" }, "s", '"1s', {})
