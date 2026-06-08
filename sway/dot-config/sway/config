@@ -16,6 +16,7 @@ set $menu $rofi_cmd -modes 'drun,run' -show drun
 set $scratchpad_toggle /home/jhor/dotfiles/sway/dot-config/sway/scratchpad_toggle.sh
 set $workspace_toggle /home/jhor/dotfiles/sway/dot-config/sway/workspace_toggle.sh
 set $screenshot /home/jhor/dotfiles/sway/dot-config/sway/screenshot.sh
+set $switch_monitor /home/jhor/dotfiles/sway/dot-config/sway/switch_monitor.sh
 
 # Output
     output eDP-1 pos 640 1080 scale 1.5
@@ -92,7 +93,7 @@ set $screenshot /home/jhor/dotfiles/sway/dot-config/sway/screenshot.sh
     bindsym $mod+Shift+up move up
     bindsym $mod+Shift+right move right
 
-    bindsym $mod+m move workspace output left
+    bindsym $mod+m exec $switch_monitor
     bindsym $mod+Comma move container output up
 
 # Workspaces
