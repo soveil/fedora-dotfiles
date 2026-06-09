@@ -2,14 +2,15 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	lazy = false,
 	build = ":TSUpdate",
-	cond = not vim.g.vscode,
 	init = function()
-		vim.api.nvim_create_autocmd("FileType", {
-			pattern = { "<filetype>" },
-			callback = function()
-				vim.treesitter.start()
-			end,
-		})
+		if not vim.g.vscode then
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = { "<filetype>" },
+				callback = function()
+					vim.treesitter.start()
+				end,
+			})
+		end
 		require("nvim-treesitter").setup({})
 		require("nvim-treesitter").install({
 			"bash",

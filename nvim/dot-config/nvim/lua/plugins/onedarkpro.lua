@@ -1,6 +1,7 @@
 return {
 	"olimorris/onedarkpro.nvim",
 	priority = 1000, -- Ensure it loads first
+	cond = not vim.g.vscode,
 	init = function()
 		require("onedarkpro").setup({
 			colors = {

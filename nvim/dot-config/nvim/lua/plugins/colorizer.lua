@@ -1,8 +1,5 @@
-if not vim.g.vscode then
-	return {
-		"norcalli/nvim-colorizer.lua",
-		opts = {},
-	}
-else
-	return {}
-end
+return {
+	"norcalli/nvim-colorizer.lua",
+	cond = not vim.g.vscode,
+	opts = {},
+}

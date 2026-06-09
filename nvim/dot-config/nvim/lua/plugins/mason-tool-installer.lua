@@ -1,5 +1,6 @@
 return {
 	"WhoIsSethDaniel/mason-tool-installer.nvim",
+	cond = not vim.g.vscode,
 	opts = {
 		ensure_installed = {
 			"bash-language-server",

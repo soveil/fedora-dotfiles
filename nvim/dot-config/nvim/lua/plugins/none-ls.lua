@@ -1,35 +1,32 @@
-if not vim.g.vscode then
-	return {
-		"nvimtools/none-ls.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			local null_ls = require("null-ls")
-			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+return {
+	"nvimtools/none-ls.nvim",
+	cond = not vim.g.vscode,
+	dependencies = { "nvim-lua/plenary.nvim" },
+	config = function()
+		local null_ls = require("null-ls")
+		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
-			local sources = {
-				null_ls.builtins.formatting.clang_format, -- c, cpp, cs, java, cuda, proto
-				null_ls.builtins.formatting.stylua,   -- lua
-				null_ls.builtins.formatting.prettierd, -- json
-			}
+		local sources = {
+			null_ls.builtins.formatting.clang_format, -- c, cpp, cs, java, cuda, proto
+			null_ls.builtins.formatting.stylua, -- lua
+			null_ls.builtins.formatting.prettierd, -- json
+		}
 
-			null_ls.setup({
-				sources = sources,
-				-- -- format on save
-				-- on_attach = function(client, bufnr)
-				-- 	if client.supports_method("textDocument/formatting") then
-				-- 		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-				-- 		vim.api.nvim_create_autocmd("BufWritePre", {
-				-- 			group = augroup,
-				-- 			buffer = bufnr,
-				-- 			callback = function()
-				-- 				vim.lsp.buf.format({ async = false })
-				-- 			end,
-				-- 		})
-				-- 	end
-				-- end,
-			})
-		end,
-	}
-else
-	return {}
-end
+		null_ls.setup({
+			sources = sources,
+			-- format on save
+			on_attach = function(client, bufnr)
+				if client.supports_method("textDocument/formatting") then
+					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						group = augroup,
+						buffer = bufnr,
+						callback = function()
+							vim.lsp.buf.format({ async = false })
+						end,
+					})
+				end
+			end,
+		})
+	end,
+}

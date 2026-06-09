@@ -5,10 +5,10 @@ vim.keymap.set("n", "<leader>w", "<cmd>set wrap!<CR>", { desc = "Toggle wrap" })
 vim.keymap.set("n", "<leader>o", "o<Esc>")
 vim.keymap.set("n", "<leader>L", "<cmd>Lazy update<CR>")
 
-vim.keymap.set({"n", "v", "s", "o"}, "<Left>", "h")
-vim.keymap.set({"n", "v", "s", "o"}, "<Down>", "j")
-vim.keymap.set({"n", "v", "s", "o"}, "<Up>", "k")
-vim.keymap.set({"n", "v", "s", "o"}, "<Right>", "l")
+vim.keymap.set({ "n", "v", "s", "o" }, "<Left>", "h")
+vim.keymap.set({ "n", "v", "s", "o" }, "<Down>", "j")
+vim.keymap.set({ "n", "v", "s", "o" }, "<Up>", "k")
+vim.keymap.set({ "n", "v", "s", "o" }, "<Right>", "l")
 
 -- Buffer navigation
 -- vim.keymap.set("n", "<C-a>", "<cmd>bp<CR>", { desc = "Previous buffer" })
@@ -19,7 +19,7 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Focus left window" })
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Focus right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Focus lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Focus upper window" })
-vim.keymap.set("n", "gw", "<C-w>w", {desc = "Switch windows"})
+vim.keymap.set("n", "gw", "<C-w>w", { desc = "Switch windows" })
 
 -- LSP
 vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Go to declaration" })
@@ -30,7 +30,7 @@ vim.keymap.set("n", "<C-s>", function()
 end)
 vim.keymap.set("n", "K", function()
 	vim.lsp.buf.hover({
-		border = "rounded"
+		border = "rounded",
 	})
 end)
 
@@ -52,6 +52,21 @@ vim.keymap.set({ "n", "v" }, "<leader>p", function()
 	vim.fn.setreg("1", reg_plus)
 	vim.fn.setreg("+", reg1)
 end, { desc = "Swap system and neovim registers" })
+
+-- New lines from o/O
+local new_lines = function(command, opposite)
+	if vim.v.count <= 1 then
+		return command
+	end
+	return ":<C-u><CR>" .. command .. ".<Esc>m`" .. vim.v.count - 1 .. opposite .. "<Esc>g``s"
+end
+
+vim.keymap.set("n", "o", function()
+	return new_lines("o", "O")
+end, { noremap = true, silent = true, expr = true })
+vim.keymap.set("n", "O", function()
+	return new_lines("O", "o")
+end, { noremap = true, silent = true, expr = true })
 
 -- Toggle quickfix
 vim.keymap.set({ "n", "v" }, "<leader>q", function()

@@ -1,15 +1,12 @@
-if not vim.g.vscode then
-	return {
-		"yorickpeterse/nvim-pqf",
-		opts = {
-			signs = {
-				error = { text = " " },
-				warning = { text = " " },
-				info = { text = " " },
-				hint = { text = " " },
-			},
+return {
+	"yorickpeterse/nvim-pqf",
+	cond = not vim.g.vscode,
+	opts = {
+		signs = {
+			error = { text = " " },
+			warning = { text = " " },
+			info = { text = " " },
+			hint = { text = " " },
 		},
-	}
-else
-	return {}
-end
+	},
+}

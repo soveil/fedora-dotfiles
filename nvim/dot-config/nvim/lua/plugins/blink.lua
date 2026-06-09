@@ -24,7 +24,7 @@ return {
 		completion = {
 			list = { selection = { auto_insert = false } },
 			documentation = { auto_show = true, auto_show_delay_ms = 100, window = { border = "rounded" } },
-			ghost_text = { enabled = true },
+			ghost_text = { enabled = false },
 			menu = {
 				border = "none",
 				draw = {

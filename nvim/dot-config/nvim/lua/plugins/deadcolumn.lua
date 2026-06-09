@@ -1,10 +1,9 @@
-	return {
-		"Bekaboo/deadcolumn.nvim",
-		cond = not vim.g.vscode,
-		-- priority = 10000,
-		opts = {
-			warning = {
-				offset = 160,
-			}
-		}
-	}
+return {
+	"Bekaboo/deadcolumn.nvim",
+	cond = not vim.g.vscode,
+	opts = {
+		warning = {
+			offset = 160,
+		},
+	},
+}

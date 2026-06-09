@@ -1,5 +1,6 @@
 return {
 	"mfussenegger/nvim-lint",
+	cond = not vim.g.vscode,
 	init = function()
 		local lint = require("lint")
 		lint.linters_by_ft = {

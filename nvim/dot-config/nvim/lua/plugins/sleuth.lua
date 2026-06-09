@@ -1,5 +1,4 @@
-if not vim.g.vscode then return {
-"tpope/vim-sleuth"
+return {
+	"tpope/vim-sleuth",
+	cond = not vim.g.vscode,
 }
-else return {}
-end
