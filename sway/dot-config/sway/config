@@ -31,9 +31,6 @@ set $switch_monitor /home/jhor/dotfiles/sway/dot-config/sway/switch_monitor.sh
     input type:keyboard repeat_delay 250
     input type:keyboard repeat_rate 25
 
-    input 16700:9485:Dell_Mouse pointer_accel -0.3
-    input 16700:9485:Dell_Mouse_MS3320W_Mouse pointer_accel -0.3
-
 # Key bindings
     bindsym $mod+Return exec $term
     bindsym $mod+Shift+q kill

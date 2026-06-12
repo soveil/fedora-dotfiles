@@ -1,8 +1,8 @@
 configuration {
-  font: "Inter 12";
+  font: "Jetbrains Mono Nerd Font 12";
   show-icons: true;
   hover-select: true;
   drun-display-format: "{name}";
   case-smart: true;
 }
-@theme "./Arc-Dark.rasi"
+@theme "./catppuccin-default.rasi"

@@ -137,7 +137,7 @@ source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/functions.zsh"
 # Syntax highlighting
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[comment]="fg=red,bold"
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # For Hercules
 if [ -f /home/jhor/hercules/herc4x/hyperion-init-zsh.sh ]; then

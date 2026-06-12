@@ -2,7 +2,7 @@
 
 * {
   border: none;
-  border-radius: 0;
+  border-radius: 0.5rem;
   min-height: 0;
   margin: 0;
   padding: 0;
@@ -10,7 +10,7 @@
 
 /* The whole bar */
 #waybar {
-  background: @base;
+  background: transparent;
   color: @text;
   font-family:
     Inter,
@@ -32,12 +32,18 @@ window#waybar.solo #waybar {
   background: @base;
 }
 
+.modules-left,
+.modules-center,
+.modules-right {
+  margin: 0 0 4px 0;
+}
+
 .modules-right:last-child {
   margin-right: 1rem;
 }
 
 .modules-left:first-child {
-  margin-left: 0;
+  margin-left: 1rem;
 }
 
 /* Each module */

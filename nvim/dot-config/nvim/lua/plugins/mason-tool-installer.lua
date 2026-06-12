@@ -7,6 +7,7 @@ return {
 			"checkmake",
 			"clang-format",
 			"clangd",
+			"css-lsp",
 			"html-lsp",
 			"lua-language-server",
 			"prettierd",
