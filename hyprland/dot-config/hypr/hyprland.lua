@@ -1,7 +1,11 @@
 require("lua.theme")
 require("lua.keybinds")
+local workspaces = require("lua.workspaces")
 
+local apps = require("lua.apps")
 local functions = require("lua.functions")
+
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland")
 
 ------------------
 ---- MONITORS ----
@@ -37,14 +41,16 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("hyprpaper")
 
+	functions.toggle_terminal()
+	functions.toggle_browser()
 	functions.toggle_ai()
-	hl.exec_cmd("firefox", { workspace = "2" })
-	hl.exec_cmd("kitty", { workspace = "1" })
 end)
 
 -- Set default workspaces to monitors
-hl.workspace_rule({ workspace = "1", monitor = "eDP-1", default = true })
-hl.workspace_rule({ workspace = "2", monitor = "DP-3", default = true })
+hl.workspace_rule({ workspace = "1", monitor = "eDP-1", on_created_empty = apps.terminal })
+hl.workspace_rule({ workspace = "2", monitor = "DP-3", on_created_empty = apps.browser })
+hl.workspace_rule({ workspace = "3", monitor = "eDP-1" })
+hl.workspace_rule({ workspace = tostring(workspaces.ai), monitor = "eDP-1", on_created_empty = apps.ai })
 
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----

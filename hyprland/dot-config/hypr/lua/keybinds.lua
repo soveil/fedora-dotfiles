@@ -2,9 +2,10 @@ require("lua.rofimoji")
 
 local apps = require("lua.apps")
 local functions = require("lua.functions")
+local workspaces = require("lua.workspaces")
 
 -- https://wiki.hypr.land/Configuring/Basics/Binds/
-hl.bind("SUPER + Q", hl.dsp.exec_cmd(apps.terminal))
+hl.bind("SUPER + T", hl.dsp.exec_cmd(apps.terminal))
 hl.bind("SUPER + B", hl.dsp.exec_cmd(apps.browser))
 hl.bind("SUPER + D", hl.dsp.exec_cmd(apps.menu))
 
@@ -69,11 +70,19 @@ hl.define_submap("group", function()
 	end
 end)
 
+-- Workspaces
+hl.bind("SUPER + A", function()
+	functions.toggle_workspace(workspaces.ai)
+end)
+hl.bind("SUPER + SHIFT + A", hl.dsp.window.move({ workspace = workspaces.ai }))
+
 -- Switch workspaces with SUPER + [0-9]
 -- Move active window to a workspace with SUPER + SHIFT + [0-9]
 for i = 1, 10 do
 	local key = i % 10 -- 10 maps to key 0
-	hl.bind("SUPER + " .. key, hl.dsp.focus({ workspace = i }))
+	hl.bind("SUPER + " .. key, function()
+		functions.toggle_workspace(i)
+	end)
 	hl.bind("SUPER + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
@@ -126,9 +135,6 @@ hl.bind(
 			.. '" "$HOME/$file"; fi'
 	)
 )
-
--- AI workspace
-hl.bind("SUPER + A", functions.toggle_ai)
 
 -- Calculator
 hl.workspace_rule({
