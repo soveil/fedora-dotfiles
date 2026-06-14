@@ -3,7 +3,7 @@ return {
 	cond = not vim.g.vscode,
 	config = function()
 		require("oil").setup({
-			default_file_explorer = not Netrw, -- If Netrw is true, set default_file_explorer to false
+			default_file_explorer = not vim.g.netrw, -- If Netrw is true, set default_file_explorer to false
 			keymaps = {
 				["<C-p>"] = {
 					"actions.preview",

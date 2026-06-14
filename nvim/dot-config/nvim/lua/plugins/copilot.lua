@@ -1,8 +1,7 @@
 return {
 	"zbirenbaum/copilot.lua",
-	cond = false,
+	cond = vim.g.ai and not vim.g.vscode,
 	cmd = "Copilot",
-	event = "InsertEnter",
 	opts = {
 		suggestion = {
 			auto_trigger = true,

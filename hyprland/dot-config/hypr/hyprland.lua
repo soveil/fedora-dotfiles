@@ -13,15 +13,15 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland")
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
-	output = "eDP-1",
+	output = "desc:Sharp Corporation 0x1548",
 	mode = "preferred",
-	position = "640x1080",
+	position = "0x0",
 	scale = "auto",
 })
 hl.monitor({
-	output = "DP-3",
+	output = "desc:LG Electronics LG ULTRAWIDE 0x0004FD46",
 	mode = "preferred",
-	position = "0x0",
+	position = "auto-center-up",
 	scale = "auto",
 })
 
@@ -41,9 +41,9 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("hyprpaper")
 
-	functions.toggle_terminal()
-	functions.toggle_browser()
-	functions.toggle_ai()
+	hl.dsp.focus({ workspace = "2" })
+	hl.dsp.focus({ workspace = workspaces.ai })
+	hl.dsp.focus({ workspace = "1" })
 end)
 
 -- Set default workspaces to monitors

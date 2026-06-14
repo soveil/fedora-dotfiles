@@ -50,7 +50,7 @@ return {
 		end, { desc = "Find symbols" })
 
 		-- Godot specific overwrites
-		if not Godot then
+		if not vim.g.godot then
 			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
 			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Grep files" })
 		else

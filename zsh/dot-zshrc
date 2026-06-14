@@ -12,8 +12,9 @@ unsetopt beep
 bindkey -v
 
 alias v=nvim
-alias vgd="nvim --listen /tmp/godot.pipe --cmd \"lua Godot = true\""
-alias vrw="nvim --cmd \"lua Netrw = true\""
+alias va="nvim --cmd \"lua vim.g.ai = true\""
+alias vgd="nvim --listen /tmp/godot.pipe --cmd \"lua vim.g.godot = true\""
+alias vrw="nvim --cmd \"lua vim.g.netrw = true\""
 
 alias tmpdir='cd $(mktemp -d)'
 alias tmpfile="$EDITOR \$(mktemp)"

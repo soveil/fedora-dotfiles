@@ -8,7 +8,7 @@ return {
 	-- config = function()
 	-- 	local filtered_items = {}
 	--
-	-- 	if Godot then
+	-- 	if vim.g.godot then
 	-- 		filtered_items = {
 	-- 			hide_by_pattern = { "*.[^gd]*", "*.godot", "*.gdextension", "LICENSE" },
 	-- 			show_hidden_count = false,
