@@ -16,6 +16,7 @@ return {
 			"ruff",
 			"rust-analyzer",
 			"stylua",
+			"tombi",
 			"typescript-language-server",
 			"typos-lsp",
 		},

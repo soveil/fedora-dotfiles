@@ -11,7 +11,6 @@ vim.lsp.config["ruff"] = {
 }
 
 vim.lsp.config["rust-analyzer"] = {
-	-- cmd = { vim.fn.stdpath("data") .. "/../../../.cargo/bin/rust-analyzer" },
 	cmd = { "rust-analyzer" },
 	filetypes = { "rust" },
 }
@@ -31,10 +30,10 @@ local function set_python_path(command)
 	for _, client in ipairs(clients) do
 		if client.settings then
 			client.settings.python =
-					vim.tbl_deep_extend("force", client.settings.python --[[@as table]], { pythonPath = path })
+				vim.tbl_deep_extend("force", client.settings.python --[[@as table]], { pythonPath = path })
 		else
 			client.config.settings =
-					vim.tbl_deep_extend("force", client.config.settings, { python = { pythonPath = path } })
+				vim.tbl_deep_extend("force", client.config.settings, { python = { pythonPath = path } })
 		end
 		client:notify("workspace/didChangeConfiguration", { settings = nil })
 	end

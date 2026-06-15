@@ -24,6 +24,7 @@ return {
 			c = { "clang_format" },
 			cpp = { "clang_format" },
 			rust = { "rustfmt" },
+			toml = { "tombi" },
 		},
 		-- Set default options
 		default_format_opts = {
