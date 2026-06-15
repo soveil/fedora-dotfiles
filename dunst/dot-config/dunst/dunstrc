@@ -1,0 +1,10 @@
+[global]
+    follow = mouse
+    origin = top-center
+    offset = (0, 8)
+    frame_width = 2
+    gap_size = 2
+    font = "Inter 10"
+    dmenu = "rofi -dmenu -p dunst"
+    corner_radius = 8
+    alignment = center
