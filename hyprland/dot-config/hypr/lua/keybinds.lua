@@ -2,7 +2,7 @@ require("lua.rofimoji")
 
 local apps = require("lua.apps")
 local functions = require("lua.functions")
-local workspaces = require("lua.workspaces")
+local V = require("lua.variables")
 
 -- https://wiki.hypr.land/Configuring/Basics/Binds/
 hl.bind("SUPER + T", hl.dsp.exec_cmd(apps.terminal))
@@ -72,9 +72,9 @@ end)
 
 -- Workspaces
 hl.bind("SUPER + A", function()
-	functions.toggle_workspace(workspaces.ai)
+	functions.toggle_workspace(V.workspaces.ai)
 end)
-hl.bind("SUPER + SHIFT + A", hl.dsp.window.move({ workspace = workspaces.ai }))
+hl.bind("SUPER + SHIFT + A", hl.dsp.window.move({ workspace = V.workspaces.ai }))
 
 -- Switch workspaces with SUPER + [0-9]
 -- Move active window to a workspace with SUPER + SHIFT + [0-9]
