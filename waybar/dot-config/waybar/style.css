@@ -1,4 +1,4 @@
-@import "mocha.css";
+@import "vague.css";
 
 * {
   border: none;
@@ -10,8 +10,8 @@
 
 /* The whole bar */
 #waybar {
-  background: @base;
-  color: @text;
+  background: @black;
+  color: @white;
   font-family:
     Inter,
     JetBrainsMono Nerd Font,
@@ -23,13 +23,9 @@
   font-size: 13px;
 }
 
-window#waybar.solo #waybar {
-  background: red;
-}
-
 .modules-left,
 .modules-right {
-  background: @base;
+  background: @black;
 }
 
 .modules-right:last-child {
@@ -63,41 +59,41 @@ window#waybar.solo #waybar {
  * -------------------------------------------------------------------------- */
 
 #clock {
-  color: @rosewater;
+  color: @white;
 }
 
 #battery.warning {
-  color: @crust;
-  background: @peach;
+  color: @black;
+  background: @yellow;
 }
 
 #battery.critical {
-  color: @crust;
+  color: @black;
   background: @red;
 }
 
 #battery {
-  color: @mauve;
+  color: @magenta;
 }
 
 #battery:hover {
-  background: @surface0;
+  background: shade(@black, 2.0);
 }
 
 #battery.warning:hover {
-  background: shade(@peach, 1.1);
+  background: shade(@yellow, 2.0);
 }
 
 #battery.critical:hover {
-  background: shade(@red, 1.1);
+  background: shade(@red, 2.0);
 }
 
 #cpu {
-  color: @teal;
+  color: @blue;
 }
 
 #cpu.warning {
-  color: @peach;
+  color: @yellow;
 }
 
 #cpu.critical {
@@ -108,25 +104,9 @@ window#waybar.solo #waybar {
   color: @yellow;
 }
 
-#memory {
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-#memory.warning {
-  color: @peach;
-}
-
-#memory.critical {
-  color: @red;
-  animation-name: blink-critical;
-  animation-duration: 2s;
-}
-
 #mode,
 #submap {
-  color: @crust;
+  color: @black;
   background: @red;
   font-weight: bold;
   padding-top: 2px;
@@ -134,11 +114,11 @@ window#waybar.solo #waybar {
 }
 
 #network {
-  color: @green;
+  color: @blue;
 }
 
 #network.disabled {
-  color: @subtext0;
+  color: shade(@white, 0.8);
 }
 
 #network.disconnected {
@@ -146,7 +126,7 @@ window#waybar.solo #waybar {
 }
 
 #network:hover {
-  background: @surface0;
+  background: shade(@black, 2.0);
 }
 
 #pulseaudio.muted {
@@ -154,11 +134,11 @@ window#waybar.solo #waybar {
 }
 
 #pulseaudio:hover {
-  background: @surface0;
+  background: shade(@black, 2.0);
 }
 
 #window {
-  background: @base;
+  background: @black;
   padding: 0 0.5rem 0 0.5rem;
 }
 
@@ -168,25 +148,24 @@ window#waybar.empty #window {
 
 #workspaces button {
   padding: 2px 0.5rem 2px 0.5rem;
-  color: @subtext0;
+  color: @white;
   background: transparent;
+  border: 0;
 }
 
 #workspaces button:hover {
-  color: @text;
-  background: @surface0;
+  background: shade(@black, 2.0);
 }
 
 #workspaces button.focused,
 #workspaces button.active {
-  border-color: @lavender;
-  color: @crust;
-  background: @lavender;
+  color: @black;
+  background: @blue;
 }
 
 #workspaces button.focused:hover,
 #workspaces button.active:hover {
-  border-color: @lavender;
+  background: shade(@blue, 1.3);
 }
 
 #workspaces button.urgent {
@@ -199,7 +178,7 @@ window#waybar.empty #window {
 }
 
 #power-profiles-daemon.balanced {
-  color: @rosewater;
+  color: @white;
 }
 
 #power-profiles-daemon.performance {
@@ -207,5 +186,5 @@ window#waybar.empty #window {
 }
 
 #power-profiles-daemon:hover {
-  background: @surface0;
+  background: shade(@black, 2.0);
 }
