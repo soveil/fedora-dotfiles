@@ -14,13 +14,13 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland")
 hl.monitor({
 	output = "desc:Sharp Corporation 0x1548",
 	mode = "preferred",
-	position = "0x0",
+	position = "-1280x300",
 	scale = "auto",
 })
 hl.monitor({
 	output = "desc:LG Electronics LG ULTRAWIDE 0x0004FD46",
 	mode = "preferred",
-	position = "auto-right",
+	position = "0x0",
 	scale = "auto",
 })
 
@@ -40,8 +40,8 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("hyprpaper")
 
-	hl.dsp.focus({ workspace = "2" })
 	hl.dsp.focus({ workspace = V.workspaces.ai })
+	hl.dsp.focus({ workspace = "2" })
 	hl.dsp.focus({ workspace = "1" })
 end)
 

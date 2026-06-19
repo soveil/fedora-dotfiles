@@ -1,15 +1,3 @@
--- local onedark = require("lua.onedark")
---
--- local inactive_border = onedark.dark_gray
--- local active_border = onedark.blue
---
--- local inactive_group_border = inactive_border
--- local inactive_group_bar = onedark.dark_gray
--- local active_group_border = active_border
--- local active_group_bar = active_border
--- local inactive_group_text = onedark.light_gray
--- local active_group_text = onedark.black
-
 local catppuccin = require("lua.catppuccin-mocha")
 
 local inactive_border = catppuccin.base
