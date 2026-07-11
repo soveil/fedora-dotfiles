@@ -5,11 +5,11 @@ local functions = require("lua.functions")
 local V = require("lua.variables")
 
 -- https://wiki.hypr.land/Configuring/Basics/Binds/
-hl.bind("SUPER + T", hl.dsp.exec_cmd(apps.terminal))
+hl.bind("SUPER + RETURN", hl.dsp.exec_cmd(apps.terminal))
 hl.bind("SUPER + B", hl.dsp.exec_cmd(apps.browser))
 hl.bind("SUPER + D", hl.dsp.exec_cmd(apps.menu))
 
-hl.bind("SUPER + SHIFT + Q", hl.dsp.window.close())
+hl.bind("SUPER + SHIFT + C", hl.dsp.window.close())
 hl.bind(
 	"SUPER + CTRL + SHIFT + E",
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
@@ -18,7 +18,7 @@ hl.bind("SUPER + CTRL + L", hl.dsp.exec_cmd("systemctl suspend"))
 hl.bind("SUPER + CTRL + SHIFT + L", hl.dsp.exec_cmd("systemctl hibernate"))
 
 hl.bind("SUPER + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind("SUPER + T", hl.dsp.layout("togglesplit")) -- dwindle only
+hl.bind("SUPER + S", hl.dsp.layout("togglesplit")) -- dwindle only
 hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
 hl.bind("SUPER + SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 
@@ -102,12 +102,12 @@ hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 hl.bind("SUPER + M", hl.dsp.workspace.move({ monitor = "+1" }))
 
 -- Screenshot
-hl.bind("SUPER + backslash", hl.dsp.exec_cmd(apps.screenshot))
-hl.bind("SUPER + SHIFT + backslash", hl.dsp.exec_cmd(apps.screenshot .. " && wl-paste | imv &> /dev/null"))
+hl.bind("SUPER + slash", hl.dsp.exec_cmd(apps.screenshot))
+hl.bind("SUPER + SHIFT + slash", hl.dsp.exec_cmd(apps.screenshot .. " && wl-paste | imv &> /dev/null"))
 
 --Color picker
 hl.bind(
-	"SUPER + CTRL + C",
+	"SUPER + CTRL + COMMA",
 	hl.dsp.exec_cmd(
 		'grim -g "$(XCURSOR_SIZE=1 slurp -p -b "#00000000")" -t ppm - | magick - -format "%[pixel:p{0,0}]" txt:- | sed -nE "2s/.*(#.{6}).*/\\1/;2p" | tee >(xargs notify-send) | wl-copy -n'
 	)

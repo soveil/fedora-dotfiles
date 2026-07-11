@@ -1,0 +1,190 @@
+@import "vague.css";
+
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* The whole bar */
+#waybar {
+  background: @black;
+  color: @white;
+  font-family:
+    Inter,
+    JetBrainsMono Nerd Font,
+    IosevkaTerm Nerd Font,
+    Iosevka Aile,
+    Cantarell,
+    Noto Sans,
+    sans-serif;
+  font-size: 13px;
+}
+
+.modules-left,
+.modules-right {
+  background: @black;
+}
+
+.modules-right:last-child {
+  margin-right: 1rem;
+}
+
+.modules-left:first-child {
+  margin-left: 0;
+}
+
+/* Each module */
+#backlight,
+#battery,
+#clock,
+#cpu,
+#custom-keyboard-layout,
+#memory,
+#mode,
+#network,
+#power-profiles-daemon,
+#pulseaudio,
+#submap,
+#temperature,
+#tray {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+/* -----------------------------------------------------------------------------
+ * Module styles
+ * -------------------------------------------------------------------------- */
+
+#clock {
+  color: @white;
+}
+
+#battery.warning {
+  color: @black;
+  background: @yellow;
+}
+
+#battery.critical {
+  color: @black;
+  background: @red;
+}
+
+#battery {
+  color: @magenta;
+}
+
+#battery:hover {
+  background: shade(@black, 2.0);
+}
+
+#battery.warning:hover {
+  background: shade(@yellow, 2.0);
+}
+
+#battery.critical:hover {
+  background: shade(@red, 2.0);
+}
+
+#cpu {
+  color: @blue;
+}
+
+#cpu.warning {
+  color: @yellow;
+}
+
+#cpu.critical {
+  color: @red;
+}
+
+#backlight {
+  color: @yellow;
+}
+
+#mode,
+#submap {
+  color: @black;
+  background: @red;
+  font-weight: bold;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+#network {
+  color: @blue;
+}
+
+#network.disabled {
+  color: shade(@white, 0.8);
+}
+
+#network.disconnected {
+  color: @red;
+}
+
+#network:hover {
+  background: shade(@black, 2.0);
+}
+
+#pulseaudio.muted {
+  color: @red;
+}
+
+#pulseaudio:hover {
+  background: shade(@black, 2.0);
+}
+
+#window {
+  background: @black;
+  padding: 0 0.5rem 0 0.5rem;
+}
+
+window#waybar.empty #window {
+  background: transparent;
+}
+
+#workspaces button.1 {
+  padding: 2px 0.5rem 2px 0.5rem;
+  color: @white;
+  background: transparent;
+  border: 0;
+}
+
+#workspaces button:hover {
+  background: shade(@black, 2.0);
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+  color: @black;
+  background: @blue;
+}
+
+#workspaces button.focused:hover,
+#workspaces button.active:hover {
+  background: shade(@blue, 1.3);
+}
+
+#workspaces button.urgent {
+  border-color: @red;
+  color: @red;
+}
+
+#power-profiles-daemon.power-saver {
+  color: @green;
+}
+
+#power-profiles-daemon.balanced {
+  color: @white;
+}
+
+#power-profiles-daemon.performance {
+  color: @yellow;
+}
+
+#power-profiles-daemon:hover {
+  background: shade(@black, 2.0);
+}

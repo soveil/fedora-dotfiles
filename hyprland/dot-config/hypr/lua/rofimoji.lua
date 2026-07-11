@@ -1,4 +1,4 @@
-hl.bind("SUPER + S", hl.dsp.submap("symbol"))
+hl.bind("SUPER + Z", hl.dsp.submap("symbol"))
 hl.define_submap("symbol", function()
 	hl.bind("ESCAPE", hl.dsp.submap("reset"))
 

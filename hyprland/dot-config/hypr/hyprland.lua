@@ -39,16 +39,12 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("hypridle")
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("hyprpaper")
-
-	hl.dsp.focus({ workspace = V.workspaces.ai })
-	hl.dsp.focus({ workspace = "2" })
-	hl.dsp.focus({ workspace = "1" })
 end)
 
 -- Set default workspaces to monitors
-hl.workspace_rule({ workspace = "1", monitor = V.monitors.main, on_created_empty = apps.terminal })
-hl.workspace_rule({ workspace = "2", monitor = V.monitors.laptop, on_created_empty = apps.browser })
-hl.workspace_rule({ workspace = "3", monitor = V.monitors.main })
+hl.workspace_rule({ workspace = "1", monitor = V.monitors.main, default = true, on_created_empty = apps.terminal })
+hl.workspace_rule({ workspace = "2", monitor = V.monitors.laptop, default = true, on_created_empty = apps.browser })
+hl.workspace_rule({ workspace = "3", monitor = V.monitors.main, default = true })
 hl.workspace_rule({ workspace = tostring(V.workspaces.ai), monitor = V.monitors.laptop, on_created_empty = apps.ai })
 
 -------------------------------
@@ -114,6 +110,9 @@ hl.config({
 		disable_hyprland_logo = true, -- If true disables the random hyprland logo / anime girl background. :(
 		focus_on_activate = true,
 	},
+	xwayland = {
+		force_zero_scaling = true,
+	},
 })
 
 ---------------
@@ -125,7 +124,6 @@ hl.config({
 		kb_layout = "us",
 		kb_variant = "",
 		kb_model = "",
-		kb_options = "",
 		kb_rules = "",
 
 		repeat_rate = 25,

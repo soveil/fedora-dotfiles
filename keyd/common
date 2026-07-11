@@ -1,0 +1,9 @@
+capslock = backspace
+sysrq = capslock
+rightshift = esc
+
+[alt]
+h = left
+j = down
+k = up
+l = right

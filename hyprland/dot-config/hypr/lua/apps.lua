@@ -1,6 +1,6 @@
 local M = {}
 
-M.ai = "firefox --new-instance -P kiosk chatgpt.com claude.ai gemini.google.com"
+M.ai = "firefox --new-instance -P kiosk chatgpt.com claude.ai gemini.google.com cursor.com/dashboard/usage"
 M.pdf = "zathura"
 M.browser = "firefox"
 M.calc = "qalc"

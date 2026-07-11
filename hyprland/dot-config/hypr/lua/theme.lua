@@ -1,14 +1,26 @@
-local catppuccin = require("lua.catppuccin-mocha")
+-- local catppuccin = require("lua.catppuccin-mocha")
 
-local inactive_border = catppuccin.base
-local active_border = catppuccin.lavender
+-- local inactive_border = catppuccin.base
+-- local active_border = catppuccin.lavender
+--
+-- local inactive_group_border = inactive_border
+-- local inactive_group_bar = catppuccin.base
+-- local active_group_border = active_border
+-- local active_group_bar = catppuccin.overlay2
+-- local inactive_group_text = catppuccin.subtext0
+-- local active_group_text = catppuccin.crust
+
+local vague = require("lua.vague")
+
+local inactive_border = vague.black
+local active_border = vague.cyan
 
 local inactive_group_border = inactive_border
-local inactive_group_bar = catppuccin.base
+local inactive_group_bar = inactive_border
 local active_group_border = active_border
-local active_group_bar = catppuccin.overlay2
-local inactive_group_text = catppuccin.subtext0
-local active_group_text = catppuccin.crust
+local active_group_bar = active_border
+local inactive_group_text = vague.white
+local active_group_text = vague.black
 
 local rounding = 0
 local rounding_power = 0
