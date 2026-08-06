@@ -12,6 +12,7 @@ return {
 			"lua-language-server",
 			"prettierd",
 			"eslint_d",
+			"fixjson",
 			"pyright",
 			"ruff",
 			"rust-analyzer",
