@@ -12,5 +12,6 @@ M.tui =
 M.menu = "rofi -terminal '$term' -modes 'drun,run' -show drun"
 
 M.screenshot = "~/dotfiles/hyprland/dot-config/hypr/screenshot.sh"
+M.fullscreen_screenshot = "~/dotfiles/hyprland/dot-config/hypr/fullscreen_screenshot.sh"
 
 return M

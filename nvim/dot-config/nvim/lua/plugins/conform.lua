@@ -19,6 +19,7 @@ return {
 	opts = {
 		-- Define your formatters
 		formatters_by_ft = {
+			gdscript = { "gdscript-formatter" },
 			lua = { "stylua" },
 			javascript = { "prettierd", stop_after_first = true },
 			json = { "fixjson" },

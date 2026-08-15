@@ -128,6 +128,7 @@ hl.config({
 
 		repeat_rate = 25,
 		repeat_delay = 250,
+		-- sensitivity = -0.5,
 
 		follow_mouse = 1,
 		focus_on_close = 1,

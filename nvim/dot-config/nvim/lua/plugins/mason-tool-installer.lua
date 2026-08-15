@@ -1,5 +1,8 @@
 return {
 	"WhoIsSethDaniel/mason-tool-installer.nvim",
+	dependencies = {
+		{ "mason-org/mason.nvim", opts = {} },
+	},
 	cond = not vim.g.vscode,
 	opts = {
 		ensure_installed = {
@@ -8,11 +11,13 @@ return {
 			"clang-format",
 			"clangd",
 			"css-lsp",
-			"html-lsp",
-			"lua-language-server",
-			"prettierd",
+			"gdscript-formatter",
 			"eslint_d",
 			"fixjson",
+			"html-lsp",
+			"ltex-ls-plus",
+			"lua-language-server",
+			"prettierd",
 			"pyright",
 			"ruff",
 			"rust-analyzer",

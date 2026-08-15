@@ -24,6 +24,7 @@ return {
 			"editorconfig",
 			"gitcommit",
 			"gitignore",
+			"gdscript",
 			"html",
 			"html_tags",
 			"http",

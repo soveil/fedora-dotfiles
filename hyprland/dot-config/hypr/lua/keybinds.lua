@@ -80,9 +80,7 @@ hl.bind("SUPER + SHIFT + A", hl.dsp.window.move({ workspace = V.workspaces.ai })
 -- Move active window to a workspace with SUPER + SHIFT + [0-9]
 for i = 1, 10 do
 	local key = i % 10 -- 10 maps to key 0
-	hl.bind("SUPER + " .. key, function()
-		functions.toggle_workspace(i)
-	end)
+	hl.bind("SUPER + " .. key, hl.dsp.focus({ workspace = i }))
 	hl.bind("SUPER + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
@@ -104,6 +102,7 @@ hl.bind("SUPER + M", hl.dsp.workspace.move({ monitor = "+1" }))
 -- Screenshot
 hl.bind("SUPER + slash", hl.dsp.exec_cmd(apps.screenshot))
 hl.bind("SUPER + SHIFT + slash", hl.dsp.exec_cmd(apps.screenshot .. " && wl-paste | imv &> /dev/null"))
+hl.bind("SUPER + period", hl.dsp.exec_cmd(apps.fullscreen_screenshot))
 
 --Color picker
 hl.bind(
