@@ -1,8 +1,3 @@
-vim.lsp.config["clangd"] = {
-	cmd = { vim.fn.stdpath("data") .. "/mason/bin/clangd" },
-	filetypes = { "c", "cpp" },
-}
-
 vim.lsp.config["ruff"] = {
 	cmd = { "ruff", "server" },
 	filetypes = { "python" },
@@ -83,8 +78,8 @@ vim.lsp.config["pyright"] = {
 	end,
 }
 
-vim.lsp.config('gdscript', {})
-vim.lsp.enable('gdscript')
+vim.lsp.config("gdscript", {})
+vim.lsp.enable("gdscript")
 
 vim.lsp.enable("clangd")
 vim.lsp.enable("lua_ls")
