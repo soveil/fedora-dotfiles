@@ -135,6 +135,14 @@ hl.bind(
 	)
 )
 
+-- Open godot project
+hl.bind(
+	"SUPER + O",
+	hl.dsp.exec_cmd(
+		'file=$(fd -H -I --base-directory ~ "project.godot" | rofi -dmenu -p godot); if [ -n "$file" ]; then godot "$HOME/$file"; fi'
+	)
+)
+
 -- Calculator
 hl.workspace_rule({
 	workspace = "special:qalc",
