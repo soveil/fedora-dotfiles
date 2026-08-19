@@ -24,6 +24,7 @@ return {
 		-- Set pickers
 		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Search help" })
+		vim.keymap.set("n", "<leader>fH", builtin.highlights, { desc = "Search highlights" })
 
 		vim.keymap.set("i", "<C-e>", function()
 			builtin.symbols({
