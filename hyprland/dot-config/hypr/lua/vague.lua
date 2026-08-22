@@ -1,6 +1,7 @@
 local M = {}
 
 M.black = "#141415"
+M.gray = "#1E1E27"
 M.red = "#d8647e"
 M.green = "#7fa563"
 M.yellow = "#f3be7c"

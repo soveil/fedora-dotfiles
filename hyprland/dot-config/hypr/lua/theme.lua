@@ -12,7 +12,7 @@
 
 local vague = require("lua.vague")
 
-local inactive_border = vague.black
+local inactive_border = vague.gray
 local active_border = vague.cyan
 
 local inactive_group_border = inactive_border

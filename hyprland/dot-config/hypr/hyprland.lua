@@ -1,5 +1,6 @@
 require("lua.theme")
 require("lua.keybinds")
+require("lua.tablet")
 local V = require("lua.variables")
 
 local apps = require("lua.apps")
@@ -14,7 +15,8 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland")
 hl.monitor({
 	output = "desc:Sharp Corporation 0x1548",
 	mode = "preferred",
-	position = "-1280x300",
+	-- position = "-1280x300", -- left
+	position = "2561x369", -- right
 	scale = "auto",
 })
 hl.monitor({
@@ -42,8 +44,8 @@ hl.on("hyprland.start", function()
 end)
 
 -- Set default workspaces to monitors
-hl.workspace_rule({ workspace = "1", monitor = V.monitors.main, default = true, on_created_empty = apps.terminal })
-hl.workspace_rule({ workspace = "2", monitor = V.monitors.laptop, default = true, on_created_empty = apps.browser })
+hl.workspace_rule({ workspace = "1", monitor = V.monitors.laptop, default = true, on_created_empty = apps.terminal })
+hl.workspace_rule({ workspace = "2", monitor = V.monitors.main, default = true, on_created_empty = apps.browser })
 hl.workspace_rule({ workspace = "3", monitor = V.monitors.main, default = true })
 hl.workspace_rule({ workspace = tostring(V.workspaces.ai), monitor = V.monitors.laptop, on_created_empty = apps.ai })
 
@@ -55,6 +57,7 @@ hl.workspace_rule({ workspace = tostring(V.workspaces.ai), monitor = V.monitors.
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("QT_SCALE_FACTOR", "1")
 
 -----------------------
 ----- PERMISSIONS -----
